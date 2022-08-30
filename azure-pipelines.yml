@@ -14,12 +14,18 @@ steps:
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
-- task: PublishBuildArtifacts@1
+
+- task: Bash@3
   inputs:
-    ArtifactName: WebSiteHarnessGabsDelfia
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo '$(Pipeline.Workspace)'
+
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'Release'
+    targetPath: '$(Pipeline.Workspace)'
     artifact: 'WebsiteGabs'
     publishLocation: 'pipeline'
     
