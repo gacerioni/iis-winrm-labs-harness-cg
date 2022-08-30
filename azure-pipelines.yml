@@ -19,7 +19,7 @@ steps:
     ArtifactName: WebSiteHarnessGabsDelfia
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: 'Release'
     artifact: 'WebsiteGabs'
     publishLocation: 'pipeline'
     
